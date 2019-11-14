@@ -1,6 +1,7 @@
 import fs from "fs";
 import http from "http";
 import https from "https";
+import Sparkmediaplayer from 'Sparkmediaplayer'
 
 export default class SparkPlatform {
 
@@ -59,6 +60,7 @@ export default class SparkPlatform {
     createRoundRect(cb, stage, w, h, radius, strokeWidth, strokeColor, fill, fillColor) {
         if (fill === undefined) fill = true;
         if (strokeWidth === undefined) strokeWidth = 0;
+        if (fillColor === undefined) fillColor = 0;
 
         fillColor = fill ? fillColor : 0;
         fillColor = fillColor.toString(16);
