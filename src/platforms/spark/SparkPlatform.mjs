@@ -2,7 +2,7 @@ import fs from "fs";
 import http from "http";
 import https from "https";
 
-export class SparkMediaplayer extends lightning$1.Component {
+export class SparkMediaplayer extends lightning.Component {
 
     _construct(){
         this._skipRenderToTexture = false;
@@ -20,7 +20,7 @@ export class SparkMediaplayer extends lightning$1.Component {
                     VideoTexture: {
                         visible: false,
                         pivot: 0.5,
-                        texture: {type: lightning$1.textures.StaticTexture, options: {}}
+                        texture: {type: lightning.textures.StaticTexture, options: {}}
                     }
                 }
             }
@@ -88,7 +88,7 @@ export class SparkMediaplayer extends lightning$1.Component {
             settings = Object.assign(settings, this._consumer.getMediaplayerSettings());
         }
 
-        if (!lightning$1.Utils.equalValues(this._stream, settings.stream)) {
+        if (!lightning.Utils.equalValues(this._stream, settings.stream)) {
             if (settings.stream && settings.stream.keySystem) {
                 navigator.requestMediaKeySystemAccess(settings.stream.keySystem.id, settings.stream.keySystem.config).then((keySystemAccess) => {
                     return keySystemAccess.createMediaKeys();
@@ -180,7 +180,7 @@ export class SparkMediaplayer extends lightning$1.Component {
     }
 
     _setVideoArea(videoPos) {
-        if (lightning$1.Utils.equalValues(this._videoPos, videoPos)) {
+        if (lightning.Utils.equalValues(this._videoPos, videoPos)) {
             return;
         }
 
