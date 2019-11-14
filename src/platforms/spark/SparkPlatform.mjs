@@ -2,7 +2,7 @@ import fs from "fs";
 import http from "http";
 import https from "https";
 
-export default class SparkMediaplayer extends lightning$1.Component {
+export class SparkMediaplayer extends lightning$1.Component {
 
     _construct(){
         this._skipRenderToTexture = false;
