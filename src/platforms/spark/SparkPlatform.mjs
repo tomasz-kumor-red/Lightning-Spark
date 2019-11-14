@@ -8,7 +8,7 @@ export class SparkMediaplayer extends lightning$1.Component {
         this._skipRenderToTexture = false;
     }
 
-    static get _supportedEvents()
+    static _supportedEvents()
     {
         return ['onProgressUpdate', 'onEndOfStream'];
     }
@@ -55,7 +55,7 @@ export class SparkMediaplayer extends lightning$1.Component {
     }
 
     _registerListeners() {
-        this._supportedEvents().forEach(event => {
+        SparkMediaplayer._supportedEvents().forEach(event => {
             const handler = (e) => {
                 this.fire(event, {videoElement: this.videoEl, event: e});
             };
@@ -65,7 +65,7 @@ export class SparkMediaplayer extends lightning$1.Component {
     }
 
     _deregisterListeners() {
-        this._supportedEvents().forEach((event, index) => {
+        SparkMediaplayer._supportedEvents().forEach((event, index) => {
             this.videoEl.delListener(event, this.eventHandlers[index]);
         });
         this.eventHandlers = [];
