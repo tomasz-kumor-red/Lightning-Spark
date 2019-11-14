@@ -1,4 +1,4 @@
-class Sparkmediaplayer extends lightning$1.Component {
+class SparkMediaplayer extends lightning$1.Component {
 
     _construct(){
         this._skipRenderToTexture = false;

@@ -1,7 +1,7 @@
 import fs from "fs";
 import http from "http";
 import https from "https";
-import Sparkmediaplayer from 'Sparkmediaplayer'
+import SparkMediaplayer from 'Sparkmediaplayer'
 
 export default class SparkPlatform {
 
