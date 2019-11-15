@@ -1,5 +1,3 @@
-require('lightning');
-
 export default class SparkMediaplayer extends lightning.Component {
 
     _construct(){
