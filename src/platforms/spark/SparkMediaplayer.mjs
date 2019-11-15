@@ -1,3 +1,5 @@
+import lightning from "wpe-lightning/src/lightning.mjs";
+
 export default class SparkMediaplayer extends lightning.Component {
 
     _construct(){
