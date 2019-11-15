@@ -1,6 +1,4 @@
-//import lightning from "wpe-lightning/src/lightning.mjs";
-
-export default class SparkMediaplayer extends lightning.Component {
+export default class SparkMediaplayer extends lng.Component {
 
     _construct(){
         this._skipRenderToTexture = false;
@@ -18,7 +16,7 @@ export default class SparkMediaplayer extends lightning.Component {
                     VideoTexture: {
                         visible: false,
                         pivot: 0.5,
-                        texture: {type: lightning.textures.StaticTexture, options: {}}
+                        texture: {type: lng.textures.StaticTexture, options: {}}
                     }
                 }
             }
@@ -86,7 +84,7 @@ export default class SparkMediaplayer extends lightning.Component {
             settings = Object.assign(settings, this._consumer.getMediaplayerSettings());
         }
 
-        if (!lightning.Utils.equalValues(this._stream, settings.stream)) {
+        if (!lng.Utils.equalValues(this._stream, settings.stream)) {
             if (settings.stream && settings.stream.keySystem) {
                 navigator.requestMediaKeySystemAccess(settings.stream.keySystem.id, settings.stream.keySystem.config).then((keySystemAccess) => {
                     return keySystemAccess.createMediaKeys();
@@ -178,7 +176,7 @@ export default class SparkMediaplayer extends lightning.Component {
     }
 
     _setVideoArea(videoPos) {
-        if (lightning.Utils.equalValues(this._videoPos, videoPos)) {
+        if (lng.Utils.equalValues(this._videoPos, videoPos)) {
             return;
         }
 
